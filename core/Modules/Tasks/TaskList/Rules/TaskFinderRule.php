@@ -16,7 +16,7 @@ class TaskFinderRule
         try {
             return $this->fetchGateway->findAll();
         } catch (\Throwable $exception) {
-            //throw new
+            // TODO lançar exceção
         }
     }
 }

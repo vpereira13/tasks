@@ -19,7 +19,7 @@ class UseCase
                 ->withTaskFinder(new TaskFinderRule($this->fetchGateway))
                 ->build();
         } catch (\Throwable $exception) {
-            // algo
+            // TODO lançar exceção
         }
     }
 
