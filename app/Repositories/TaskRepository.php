@@ -1,7 +1,9 @@
 <?php
 
+namespace App\Repositories;
+
 use App\Task;
-use tasks\core\Modules\Tasks\TaskList\Gateways\FetchGateway;
+use Tasks\Modules\Tasks\TaskList\Gateways\FetchGateway;
 
 class TaskRepository implements FetchGateway
 {

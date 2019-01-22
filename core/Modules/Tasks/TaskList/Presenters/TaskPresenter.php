@@ -1,5 +1,7 @@
 <?php
 
+namespace Task\Module\Tasks\TaskList\Presenters;
+
 class TaskPresenter
 {
     private $task;

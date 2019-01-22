@@ -1,5 +1,7 @@
 <?php
 
+namespace Task\Module\Tasks\TaskList;
+
 class UseCase
 {
     private $fetchGateway;

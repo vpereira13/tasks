@@ -1,5 +1,7 @@
 <?php
 
+namespace Task\Module\Tasks\TaskList\Collections;
+
 class TaskCollection
 {
     private $collector = array();
