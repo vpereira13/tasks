@@ -1,6 +1,6 @@
 <?php
 
-namespace Task\Module\Tasks\TaskList\Presenters;
+namespace Task\Modules\Tasks\TaskList\Presenters;
 
 class ResponsePresenter
 {

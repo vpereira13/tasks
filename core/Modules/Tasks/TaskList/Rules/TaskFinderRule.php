@@ -1,6 +1,9 @@
 <?php
 
-namespace Task\Module\Tasks\TaskList\Rules;
+namespace Task\Modules\Tasks\TaskList\Rules;
+
+use Task\Modules\Tasks\TaskList\Collections\TaskCollection;
+use Task\Modules\Tasks\TaskList\Gateways\FetchGateway;
 
 class TaskFinderRule
 {

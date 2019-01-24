@@ -1,6 +1,11 @@
 <?php
 
-namespace Task\Module\Tasks\TaskList;
+namespace Task\Modules\Tasks\TaskList;
+
+use Task\Module\Tasks\TaskList\Builders\Builder;
+use Task\Modules\Tasks\TaskList\Gateways\FetchGateway;
+use Task\Modules\Tasks\TaskList\Presenters\Response;
+use Task\Modules\Tasks\TaskList\Rules\TaskFinderRule;
 
 class UseCase
 {
@@ -15,7 +20,7 @@ class UseCase
     public function execute(): void
     {
         try {
-            $this->response = (new Builder)
+            $this->response = (new Builder())
                 ->withTaskFinder(new TaskFinderRule($this->fetchGateway))
                 ->build();
         } catch (\Throwable $exception) {

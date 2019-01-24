@@ -1,6 +1,6 @@
 <?php
 
-namespace Task\Module\Tasks\TaskList\Entities;
+namespace Task\Modules\Tasks\TaskList\Entities;
 
 class Task
 {

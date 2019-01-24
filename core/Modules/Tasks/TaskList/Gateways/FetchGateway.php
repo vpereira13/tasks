@@ -1,6 +1,8 @@
 <?php
 
-namespace Task\Module\Tasks\TaskList\Gateways;
+namespace Task\Modules\Tasks\TaskList\Gateways;
+
+use Task\Modules\Tasks\TaskList\Collections\TaskCollection;
 
 interface FetchGateway
 {

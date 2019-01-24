@@ -1,6 +1,8 @@
 <?php
 
-namespace Task\Module\Tasks\TaskList\Collections;
+namespace Task\Modules\Tasks\TaskList\Collections;
+
+use Task\Modules\Tasks\TaskList\Entities\Task;
 
 class TaskCollection
 {

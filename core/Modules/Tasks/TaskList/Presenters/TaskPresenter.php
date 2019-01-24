@@ -1,6 +1,8 @@
 <?php
 
-namespace Task\Module\Tasks\TaskList\Presenters;
+namespace Task\Modules\Tasks\TaskList\Presenters;
+
+use Task\Modules\Tasks\TaskList\Entities\Task;
 
 class TaskPresenter
 {
