@@ -7,7 +7,7 @@ use Task\Modules\Tasks\TaskList\Entities\Task;
 
 class TaskTest extends TestCase
 {
-    public function testInstanceOf()
+    public function testInstanceOf(): void
     {
         $task = new Task();
 

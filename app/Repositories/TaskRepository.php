@@ -3,23 +3,22 @@
 namespace App\Repositories;
 
 use App\Task;
-use Tasks\Modules\Tasks\TaskList\Gateways\FetchGateway;
+use Task\Modules\Tasks\TaskList\Collections\TaskCollection;
+use Task\Modules\Tasks\TaskList\Gateways\FetchGateway;
 
 class TaskRepository implements FetchGateway
 {
     private $model = Task::class;
 
-    public function __construct()
-    {
-        $this->model = new $this->model;
-    }
-
-    public function findAll()
+    public function findAll(): TaskCollection
     {
         $tasks = $this->model::all();
+        $taskCollection = null;
 
-        $tasks->save();
+        foreach ($tasks as $task) {
+            $taskCollection = $taskCollection->add($task);
+        }
 
-        return $tasks;
+        return $taskCollection;
     }
 }
