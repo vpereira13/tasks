@@ -12,11 +12,17 @@ class TaskRepository implements FetchGateway
 
     public function findAll(): TaskCollection
     {
-        $tasks = $this->model::all();
-        $taskCollection = null;
+        $tasksDB = $this->model::all();
+        $taskCollection = new TaskCollection();
 
-        foreach ($tasks as $task) {
-            $taskCollection = $taskCollection->add($task);
+        foreach ($tasksDB as $taskDB) {
+            $task = new \Task\Modules\Tasks\TaskList\Entities\Task(
+                $taskDB->id,
+                (new \DateTime($taskDB->creation)),
+                $taskDB->description,
+                $taskDB->owner
+            );
+            $taskCollection->add($task);
         }
 
         return $taskCollection;
