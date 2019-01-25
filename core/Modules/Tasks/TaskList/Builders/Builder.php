@@ -18,7 +18,7 @@ class Builder
 
     public function build(): ResponseInterface
     {
-        $taskCollection = $this->taskFinderRule()->apply;
+        $taskCollection = $this->taskFinderRule->apply();
 
         return (new Response($taskCollection));
     }
