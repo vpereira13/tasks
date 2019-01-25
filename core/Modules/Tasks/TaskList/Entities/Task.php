@@ -9,6 +9,18 @@ class Task
     private $taskDescription;
     private $taskOwner;
 
+    public function __construct(
+        int $taskId,
+        \DateTime $taskCreationDate,
+        string $taskDescription,
+        string $taskOwner
+    ) {
+        $this->taskId = $taskId;
+        $this->taskCreationDate = $taskCreationDate;
+        $this->taskDescription = $taskDescription;
+        $this->taskOwner = $taskOwner;
+    }
+
     public function getTaskId(): int
     {
         return $this->taskId;
