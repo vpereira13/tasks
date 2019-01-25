@@ -15,15 +15,6 @@ class TaskCollectionTest extends TestCase
         $this->assertInstanceOf(TaskCollection::class, $taskCollection);
     }
 
-    public function testPushTask(): void
-    {
-        $taskCollection = new TaskCollection();
-        $task = new Task(0, (new \DateTime()), 'test', 'test');
-
-        $taskCollection->add($task);
-        $this->assertEquals(1, count($taskCollection->all()));
-    }
-
     public function testGenericAdd(): void
     {
         $taskMock = $this->createMock(Task::class);
@@ -52,5 +43,15 @@ class TaskCollectionTest extends TestCase
             'float' => [1.0],
             'array' => [[]],
         ];
+    }
+
+    public function testSameAdded():void
+    {
+        $taskMock = $this->createMock(Task::class);
+        $taskCollection = new TaskCollection();
+
+        $taskCollection->add($taskMock);
+
+        $this->assertSame($taskMock, $taskCollection->all()[0]);
     }
 }
