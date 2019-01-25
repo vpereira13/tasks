@@ -8,7 +8,7 @@ class Response implements ResponseInterface
 {
     private $taskCollection;
 
-    public function __construct(TaskCollection  $taskCollection)
+    public function __construct(TaskCollection $taskCollection)
     {
         $this->taskCollection = $taskCollection;
     }
