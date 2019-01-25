@@ -6,7 +6,7 @@ use Task\Modules\Tasks\TaskList\Entities\Task;
 
 class TaskCollection
 {
-    private $collector = array();
+    private $collector = [];
 
     public function add(Task $task): void
     {
