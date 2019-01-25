@@ -8,10 +8,9 @@ class TaskCollection
 {
     private $collector = array();
 
-    public function add(Task $task): TaskCollection
+    public function add(Task $task): void
     {
         array_push($this->collector, $task);
-        return $this;
     }
 
     public function all(): array
