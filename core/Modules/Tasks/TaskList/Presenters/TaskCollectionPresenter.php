@@ -6,7 +6,7 @@ use Task\Modules\Tasks\TaskList\Collections\TaskCollection;
 
 class TaskCollectionPresenter
 {
-    private $presenter = array();
+    private $presenter = [];
     private $taskCollection;
 
     public function __construct(TaskCollection $taskCollection)
@@ -14,12 +14,14 @@ class TaskCollectionPresenter
         $this->taskCollection = $taskCollection;
     }
 
-    public function present(): void
+    public function present(): TaskCollectionPresenter
     {
-        foreach ($this->taskCollection as $task) {
-            $this->presenter[$task->getTaskId()] = (new TaskPresenter($task))
+        foreach ($this->taskCollection->all() as $task) {
+            $this->presenter[] = (new TaskPresenter($task))
                 ->present()->toArray();
         }
+
+        return $this;
     }
 
     public function toArray(): array
