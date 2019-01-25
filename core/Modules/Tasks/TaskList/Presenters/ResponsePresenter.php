@@ -4,7 +4,7 @@ namespace Task\Modules\Tasks\TaskList\Presenters;
 
 class ResponsePresenter
 {
-    private $presenter = array();
+    private $presenter = [];
     private $response;
 
     public function __construct(Response $response)
@@ -12,12 +12,14 @@ class ResponsePresenter
         $this->response = $response;
     }
 
-    public function present(): void
+    public function present(): ResponsePresenter
     {
         $this->presenter = [
             'data' => (new TaskCollectionPresenter($this->response->getData()))
                 ->present()->toArray(),
         ];
+
+        return $this;
     }
 
     public function toArray(): array
